@@ -19,3 +19,5 @@ WHERE
 ORDER BY
 	wiki.updated_at DESC
 LIMIT 6;
+
+-- How does SQL handle multiple inputs for the WHERE statement?
