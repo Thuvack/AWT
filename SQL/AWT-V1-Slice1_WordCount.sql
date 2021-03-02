@@ -1,9 +1,9 @@
--- Find top 10 wikipedias in the continent based on language index
+-- Find top 10 wikipedias in the continent based on Word Count of content pages
 
 USE awt;
 SELECT 
 	wiki.wiki_name,
-	wiki.page_count*Page_Count_Factor + wiki.word_count*Word_Count_Factor + wiki.active_editors*Active_Editors_Factor AS LangIndex
+	wiki.word_count
 FROM
 	awt.wikis as wiki
 JOIN
