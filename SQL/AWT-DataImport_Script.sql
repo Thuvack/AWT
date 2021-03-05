@@ -44,3 +44,6 @@ VALUES
 
 ("aa","aa-Wikipedia","Wikipedia","Incubator","2003-11-11","Wikipédial","https://incubator.wikimedia.org/wiki/Wp/aa/Main_Page"),
 ()
+
+-- Test another select statement
+

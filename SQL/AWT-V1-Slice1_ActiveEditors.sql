@@ -5,7 +5,7 @@ SELECT
 	wiki.wiki_name,
 	wiki.active_editors
 FROM
-	awt.wikis as wiki
+    awt.wikis as wiki
 JOIN
 	awt.languages_wikis as langwiki
 ON
