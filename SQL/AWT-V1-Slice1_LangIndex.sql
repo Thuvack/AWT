@@ -1,10 +1,10 @@
 -- Find top 10 wikipedias in the continent based on language index
 
 USE awt;
-SELECT 
+SELECT
 	wiki.wiki_name,
-	(wiki.page_count*Page_Count_Factor) + 
-	(wiki.word_count*Word_Count_Factor) + 
+	(wiki.page_count*Page_Count_Factor) +
+	(wiki.word_count*Word_Count_Factor) +
 	((first_language_speakers+second_language_speakers)*Lang_Speakers_Factor)+
 	(COUNT(country.language_code)*Lang_Reach_Factor)+    --Count number of times a language code appears in "countries_language" Table
 	(COUNT(affiliate.language_code)*Aff_Support_Factor)+   --Count number of times a language code appears in "region_affiliates" Table
@@ -22,7 +22,7 @@ WHERE
  AND
 wiki.updated_at = ( SELECT                            -- Filter by last date of update in table
                        wiki.updated_at
-                    FROM 
+                    FROM
                         wikis
                     ORDER BY
                         wiki.updated_at DESC LIMIT 1

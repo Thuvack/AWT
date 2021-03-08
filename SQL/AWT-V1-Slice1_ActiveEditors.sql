@@ -11,8 +11,15 @@ JOIN
 ON
 	wiki.wiki_name = langwiki.wiki_name
 WHERE
-	langwiki.wiki_type = 'wikipedia' AND  --This must be according to User selection??
-	wiki.updated_at = '2020-11-15'        --This must be the last date in the records table.
+langwiki.language_code IN ('zu', 'ar')               -- Where languages are user selection
+ AND
+wiki.updated_at = ( SELECT                            -- Filter by last date of update in table
+                       wiki.updated_at
+                    FROM 
+                        wikis
+                    ORDER BY
+                        wiki.updated_at DESC LIMIT 1
+                    )
 ORDER BY
 	wiki.page_count DESC
 LIMIT 10;

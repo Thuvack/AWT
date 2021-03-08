@@ -14,8 +14,15 @@ JOIN
 ON
 	wiki.wiki_name = langwiki.wiki_name
 WHERE
-	langwiki.wiki_type = 'wikipedia' AND  -- This should be controlled by user selection in the dashboard
-    langwiki.language_code = 'ZU'         -- This should be controlled by user selection in the dashboard
+langwiki.language_code IN ('zu', 'ar')               -- Where languages are user selection
+ AND
+wiki.updated_at = ( SELECT                            -- Filter by last date of update in table
+                       wiki.updated_at
+                    FROM 
+                        wikis
+                    ORDER BY
+                        wiki.updated_at DESC LIMIT 1
+                    )
 ORDER BY
 	wiki.updated_at DESC
 LIMIT 6;
