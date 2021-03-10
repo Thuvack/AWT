@@ -3,7 +3,7 @@ USE awt;
 
 SELECT
 	wiki.wiki_name,
-	wiki.page_count,
+	wiki.word_count,
 FROM
 	awt.wikis as wiki
 JOIN
