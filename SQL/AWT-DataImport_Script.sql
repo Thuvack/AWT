@@ -45,5 +45,14 @@ VALUES
 ("aa","aa-Wikipedia","Wikipedia","Incubator","2003-11-11","Wikipédial","https://incubator.wikimedia.org/wiki/Wp/aa/Main_Page"),
 ()
 
--- Test another select statement
+-- Insert into regional affiliates table
+
+INSERT INTO `awt`.`regional_affiliates`
+(`affiliate_name`,
+`country_code`,
+`language_code`,
+`wiki_name`)
+VALUES
+
+("Wikimédiens du Bénin User Group","BJ","fon","fon-Wikipedia"),
 
