@@ -120,7 +120,7 @@ JOIN
 JOIN
 	awt.languages as lang on country.language_code = lang.language_code
 LEFT JOIN
-	awt.region_affiliates as affiliate ON lang.language_code = affiliate.language_code
+	awt.regional_affiliates as affiliate ON lang.language_code = affiliate.language_code
 -- Filter select results by Wikiproject type and for the latest date of data
 WHERE
 SUBSTRING_INDEX(wiki.wiki_name, '-', -1)="Wikipedia"
