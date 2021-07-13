@@ -1,4 +1,4 @@
-
+-- This script is to insert data to different tables in the database
 -- Insert new data into Wikis Table
 -- This is the srcipt that must be used for quarterly updates to Wikis
 
